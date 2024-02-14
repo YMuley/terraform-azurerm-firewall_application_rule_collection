@@ -1,4 +1,4 @@
-variable "azure_firewall__application_rule_collection_list" {
+variable "azure_firewall_application_rule_collection_list" {
   type        = list(any)
   default     = []
   description = "list of azure firewall application rule collection objects "
