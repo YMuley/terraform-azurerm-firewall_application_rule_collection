@@ -5,7 +5,7 @@ resource "azurerm_firewall_application_rule_collection" "azure_firewall_applicat
   resource_group_name = each.value.resource_group_name
   azure_firewall_name = each.value.azure_firewall_name
   priority            = each.value.priority
-  action              = each.value.action
+  action              = each.value.action == "Allow" ? "Allow" : "Deny"
 
   dynamic "rule" {
     for_each = each.value.rule_list
